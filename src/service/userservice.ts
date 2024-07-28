@@ -1,6 +1,8 @@
 import {userModel }from '../model/usermodel';
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt';
+//import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
+
 import { IUser, loginRequestBody, updateRequestBody } from '../interface/user';
 
 //Create User

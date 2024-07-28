@@ -57,6 +57,32 @@ This project is a Node.js and TypeScript-based API for managing posts in a gener
     ```sh
     npm start
     ```
+## Challenges and Solutions
+
+### 1. TypeScript Integration
+
+**Challenge**: Ensuring type safety while interacting with Mongoose models.
+**Solution**: Defined TypeScript interfaces for request bodies and Mongoose models to maintain type safety across the application.
+
+### 2. Handling Optional Fields in Interfaces
+
+**Challenge**: TypeScript errors when dealing with optional fields.
+**Solution**: Used type assertions and optional chaining to handle optional fields properly.
+
+### 3. Removing Documents in Mongoose
+
+**Challenge**: Encountered issues with removing documents using Mongoose.
+**Solution**: Updated Mongoose version and used `deleteOne` method to remove documents.
+
+### 4. Connecting to MongoDB Atlas
+
+**Challenge**: Difficulty in connecting to the cloud MongoDB instance.
+**Solution**: Whitelisted IP addresses and used the correct connection string format provided by MongoDB Atlas.
+
+### 5. Handling CORS
+
+**Challenge**: CORS issues when making requests from the frontend.
+**Solution**: Configured CORS middleware to allow requests from specific origins.
 
 ## API Documentation
 

@@ -7,13 +7,14 @@ import connectDB from './db'
 import userRouter from './src/route/userroute'
 import postRouter from './src/route/postroute'
 import commentRouter from './src/route/commentroute'
-import mongoose from 'mongoose';
+import voteRouter from './src/route/voteroute';
 const app = express();
 const PORT = process.env.PORT || 5000;
 connectDB();
 app.use(bodyParser.json());
 app.use('/user', userRouter);
 app.use('/post', postRouter);
+app.use('/vote', voteRouter);
 app.use('/comment', commentRouter);
 
 /*
