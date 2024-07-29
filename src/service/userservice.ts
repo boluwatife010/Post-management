@@ -49,6 +49,10 @@ export const userUpdate = async (body:updateRequestBody, id: string) => {
     }
     if (password) {
         update.password = password;
+        const hashedPassword = await bcrypt.hash(password, 10);
+    if (!hashedPassword) {
+        throw new Error ("Could not hash password.");
+    }
     }
     if (username) {
         update.username = username;

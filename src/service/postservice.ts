@@ -3,6 +3,7 @@ import { postModel } from '../model/postmodel';
 
 // Create post
 export const createPost = async (body: Omit<postRequestBody, '_id' | 'upvotes' | 'downvotes' | 'viewCount' | 'createdAt' | 'updatedAt'>): Promise<any> => {
+  
   try {
     const newPost = await postModel.create(body);
     if (!newPost) {

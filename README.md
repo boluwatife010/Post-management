@@ -82,7 +82,7 @@ This project is a Node.js and TypeScript-based API for managing posts in a gener
 
 ## API Documentation
 
-For detailed API documentation, please refer to the [API Documentation](https://docs.google.com/document/d/your-document-id) on Postman.
+For detailed API documentation, please refer to the [API Documentation](https://documenter.getpostman.com/view/29099038/2sA3kaDKNS) on Postman.
 
 ## License
 
