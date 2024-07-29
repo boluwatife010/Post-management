@@ -79,14 +79,10 @@ This project is a Node.js and TypeScript-based API for managing posts in a gener
 **Challenge**: Difficulty in connecting to the cloud MongoDB instance.
 **Solution**: Whitelisted IP addresses and used the correct connection string format provided by MongoDB Atlas.
 
-### 5. Handling CORS
-
-**Challenge**: CORS issues when making requests from the frontend.
-**Solution**: Configured CORS middleware to allow requests from specific origins.
 
 ## API Documentation
 
-For detailed API documentation, please refer to the [API Documentation](https://docs.google.com/document/d/your-document-id) on Google Docs.
+For detailed API documentation, please refer to the [API Documentation](https://docs.google.com/document/d/your-document-id) on Postman.
 
 ## License
 

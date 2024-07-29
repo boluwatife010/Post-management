@@ -2,6 +2,7 @@ import {userModel }from '../model/usermodel';
 import jwt from 'jsonwebtoken';
 //import bcrypt from 'bcrypt';
 import bcrypt from 'bcryptjs';
+import { generateAuthToken } from '../middleware/auth';
 
 import { IUser, loginRequestBody, updateRequestBody } from '../interface/user';
 
@@ -17,11 +18,12 @@ export const createUser =async (body: IUser) => {
         throw new Error('The email is already in use');
     }
     const newUser = await  userModel.create({ username, email, password: hashedPassword, profilePicture });
+    const token = generateAuthToken(newUser._id.toString());
     if (!newUser) {
         throw new Error('No user was created.');
     }
     await newUser.save();
-    return newUser;
+    return {newUser, token};
 }
 export const loginUser = async(body: loginRequestBody): Promise<any> => {
     const {email, password} = body
@@ -33,7 +35,8 @@ export const loginUser = async(body: loginRequestBody): Promise<any> => {
     if (!comparison) {
         throw new Error ('Invalid password');
     }
-
+    const token = generateAuthToken(login._id.toString());
+    return {login, token};
 }
 export const userUpdate = async (body:updateRequestBody, id: string) => {
     const {email, password, username} = body;
